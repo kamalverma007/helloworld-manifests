@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: testapp-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: testapp
+    spec:
+      containers:
+      - name: testapp
+        image: kamalverma/myrepo:node-helloworld
+        ports:
+        - containerPort: 3000
